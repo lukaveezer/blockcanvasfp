@@ -1,0 +1,8 @@
+{
+  "appName": {
+    "message": "Web fingerprint protector"
+  },
+  "appDesc": {
+    "message": "Вместо того что бы блокировать вызовы JS-API, Web fingerprint protector создаёт уникальный и постоянный шум, который скрывает ваш реальный canvas fingerprint"
+  }
+}

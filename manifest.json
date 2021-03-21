@@ -1,0 +1,39 @@
+{
+  "name": "__MSG_appName__",
+  "version" : "1.0.9",
+  "description": "__MSG_appDesc__",
+  "permissions": [ "webNavigation", "tabs", "storage", "notifications", "http://*/*", "https://*/*", "webRequest", "webRequestBlocking"],
+  "icons": { "16": "img/16x16.png", "48": "img/48x48.png", "128": "img/128x128.png" },
+  "browser_action": {
+    "default_icon": "img/16x16.png",
+    "default_title": "Create & use new fingerprint",
+    "default_popup": "html/panel.html"
+  },
+  "background": {
+    "scripts": [
+      "js/md5.js",
+      "js/background.js",
+      "js/chunk-vendors.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "run_at": "document_start",
+      "matches": ["*://*/*"],
+      "js": ["js/content.js","js/change.js"],
+      "match_about_blank": true,
+      "all_frames": true
+    }
+  ],
+  "options_ui": {
+    "page": "html/options.html",
+    "browser_style": true
+  },
+  "default_locale": "en",
+  "manifest_version": 2,
+  "applications": {
+    "gecko": {
+      "strict_min_version": "60.0"
+    }
+  }
+}
